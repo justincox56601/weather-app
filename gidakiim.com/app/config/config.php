@@ -8,7 +8,7 @@ define('APP_ROOT', dirname(__FILE__, 2));
 define('URL_ROOT', 'http://localhost/gidakiim.com');
 
 //Database constants
-define('DB_HOST', "localhost");
-define('DB_USER', "root");
-define('DB_PASS', "");
-define('DB_NAME', "mvc");
+define('DB_HOST', ********);
+define('DB_USER', ********);
+define('DB_PASS', ********);
+define('DB_NAME', ********);
