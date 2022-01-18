@@ -1,0 +1,215 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+$rounded-corners: 25px;
+$shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+$bg-color-1: #f8f8ff;
+$bg-color-2: white;
+$ctrl-padding-bottom: 0.5rem;
+
+
+.container{
+	display: grid;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	
+	position: relative;
+	justify-content: center;
+	align-items: center;
+
+	
+
+	
+	.background{
+		position: absolute;
+		top: 0;
+		left:0;
+		width: inherit;
+		height: inherit;
+		z-index: -5;
+
+		video{
+			object-fit: cover;
+			object-position: center;
+			width: inherit;
+			height: inherit;
+		}
+	}
+
+	
+}
+
+#controls{
+	background-color: $bg-color-2;
+	border-radius: $rounded-corners;
+	box-shadow: $shadow;
+	padding: 1rem;
+}
+
+#data{
+	background-color: $bg-color-2;
+	padding: 1rem;
+}
+
+#graph{
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	gap: 1.5rem;
+	width: 80vw;
+	height: 80vh;
+	margin: auto;
+
+	background-color: $bg-color-1;
+	padding: 2rem;
+	border-radius: $rounded-corners;
+	
+}
+
+#graphArea{
+	width: 100%;
+	height: 100%;
+	background-color: $bg-color-2;
+	border-radius: $rounded-corners;
+	box-shadow: $shadow;
+	padding: 1rem;
+	overflow: hidden;
+	display: grid;
+	grid-template-rows: 10% auto;
+
+	#header{
+		text-align: center;
+		padding: 1rem;
+	}
+
+	#plotArea{
+		overflow:hidden;
+		width: 100%;
+		height: 100%;
+	}
+
+}
+
+#cities{
+	padding-bottom: $ctrl-padding-bottom;
+}
+
+.dropdown-container{
+	overflow: hidden;
+	margin-bottom: 1rem;
+	box-shadow: 0px 1px 3px -2px rgba(0, 0, 0, 0.35);
+	cursor: pointer;
+}
+
+.dropdown-heading{
+	display: grid;
+	grid-template-columns: 15% auto;
+	padding-bottom: $ctrl-padding-bottom;
+	align-items: center;
+
+	h3{
+		padding-left: 1rem;
+		font-size: 1.5rem;
+	}
+}
+.dropdown{
+	height: 0;
+	transition: height 300ms ease;
+
+}
+
+svg{
+	color:black;
+	width: 24px;
+	height: auto;
+	justify-self: center;
+}
+
+
+.button{
+	padding: 0.5rem 1rem;
+	margin-top: 1rem;
+	border-radius: 5px;
+	border: 1px solid rgb(78, 77, 77);
+	background-color: rgb(153, 150, 150);
+	font-size: 1rem;
+	color: black;
+	cursor: pointer;
+	display: inline-block;
+	text-decoration: none;
+	
+}
+
+.success{
+	border: 1px solid rgb(21, 82, 48);
+	background-color: rgb(43, 160, 96);
+}
+
+.shadow{
+	box-shadow: 20px 15px 156x 5px #6d6c6c94;
+}
+
+.cb-toggle{
+	appearance: none;
+	-webkit-tap-highlight-color: transparent;
+	position: relative;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+	margin: 10px;
+
+	&:after{
+		content: '';
+		width: 30px;
+		height:12px;
+		display: inline-block;
+		background: rgba(196, 195, 195, 0.55);
+		border-radius: 18px;
+		clear: both;
+	}
+
+	&:before{
+		content: '';
+		width: 16px;
+		height: 16px;
+		display: block;
+		position: absolute;
+		left: 0;
+		top: -2px;
+		border-radius: 50%;
+		background: rgb(255, 255, 255);
+		box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+	}
+
+	&:checked::before{
+		left: 14px;
+		box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.6);
+	}
+
+	&:checked::after{
+		background: #16a085;
+	}
+}
+
+label{
+	font-size: 1.0rem;
+}
+
+.ctrl-label{
+	text-align: center;
+	font-size: 1.25rem;
+	padding-bottom: $ctrl-padding-bottom;
+}
+
+input[type='date'], select{ 
+	color: black;
+	border: none;
+	border-bottom: 1px solid black;
+}
+
+#calendarStart, #calendarEnd{
+	padding-bottom: $ctrl-padding-bottom;
+}
